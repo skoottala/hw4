@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <p>
+      <%if @current_user%>
+        Welcome <%@current_user.username%>%
+      <%else%>
+        <a href="/sessions/new"> Login</a> or
+        <a href="/users/new">Signup</a>
+      <%end%>
+    </p>
+
+
     <div>
       <%= flash[:notice] %>
     </div>

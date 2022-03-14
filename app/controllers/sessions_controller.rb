@@ -8,10 +8,11 @@ class SessionsController < ApplicationController
 
     #checking email
     @user=User.find_by({email:entered_email})
-
+    
     #checking password
     if @user
-      if BCrypt::Password.new(@user.password)== entered_password
+      if BCrypt::Password.new(@user.password) == entered_password
+        session["user_id"]=@user.id #secures the user
         flash[:notice] = "Welcome, #{@user.username}."
         redirect_to "/places"
       else
