@@ -6,10 +6,7 @@
       <%= form.label "title" %>
       <%= form.text_field "title" %>
     </p>
-    <p>
-      <%= form.label "description" %>
-      <%= form.text_field "description" %>
-    </p>
+
     <p>
       <%= form.label "posted_on" %>
       <%= form.date_field "posted_on" %>
@@ -20,7 +17,11 @@
       <%= form.file_field "uploaded_image", accept: "image/png,image/jpg,image/jpeg", class: "form-control" %>
     </div>
 
-
+    <p>
+      <%= form.label "description" %>
+      <%= form.text_field "description" %>
+    </p>
+    
     <p>
       <%= form.hidden_field "place_id" %>
       <%= form.submit %>

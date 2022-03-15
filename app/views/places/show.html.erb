@@ -8,23 +8,27 @@
       <div class="col-md-4 col-sm-12">
         <h3><%= post.title %></h3>
         <h4><%= post.posted_on %></h4>
-        <p><%= post.description %></p>
+        
         <% if post.uploaded_image.attached? %>
           <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
         <% else %>
           <img src="<%= post.image %>" class="img-fluid">
         <% end %>
+      <p><%= post.description %></p>
       </div>
     <% end %>
   </div>
 
-  
+  <div class="container mt-3">
     <p>
       <a href="/posts/new?place_id=<%= @place.id %>" class="btn btn-success" >New Post</a>
     </p>
+   </div>
 
+  <div class="container mt-6">
     <p>
       <a href="/places">Back to All Places</a>
     </p>
+  </div>
 
 <%end%>
